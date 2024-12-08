@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time</title>
+    <link rel="stylesheet" href="time.css">
+</head>
+<body>
+
+    
+    <video autoplay loop muted plays-inline class="background-clip">
+        <source src="5656444-hd_1920_1080_30fps.mp4" >
+    </video>
+
+    <header>
+        <p> see your current time</p>
+        <!-- <nav>
+            <ul>
+                <li><a href="index.html"> Calculate Percentage</a></li>
+                <li><a href="weather.html"> Weather Info</a></li>
+                <li><a href="time.html"> Date and Time</a></li>
+            </ul>
+        </nav> -->
+    </header>
+
+    <div id="content">
+        <h1>Current Date and Time</h1>
+        <div id="dateTime"></div>
+    </div>
+
+    <footer>
+        <p> time zone Website </p>
+    </footer>
+
+    <script>
+        function updateDateTime() {
+            let now = new Date();
+            let dateTimeString = now.toLocaleString();
+            document.getElementById('dateTime').innerText = `Current Date and Time: ${dateTimeString}`;
+        }
+
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>

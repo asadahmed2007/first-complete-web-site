@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculation</title>
+    <link rel="stylesheet" href="result.css">
+</head>
+<body>
+
+    <video autoplay loop muted plays-inline class="background-clip">
+        <source src="6209372-uhd_4096_2160_25fps.mp4" >
+    </video>
+
+    <header>
+        <p>check your results</p>
+        <!-- <nav>
+            <ul>
+                <li><a href="index.html"> Calculate Percentage</a></li>
+                <li><a href="weather.html"> Weather Info</a></li>
+                <li><a href="time.html"> Date and Time</a></li>
+            </ul>
+        </nav> -->
+    </header>
+
+    <!-- <video autoplay loop muted plays-inline class="background-clip">
+        <source src="5192068-uhd_2160_4096_25fps.mp4" type="video/mp4">
+    </video>
+    -->
+    <div class="container">
+        <h1>Percentage Calculator</h1>
+        <form id="marksForm">
+            <label for="obtainedMarks">Obtained Marks:</label>
+            <input type="number" id="obtainedMarks" required>
+            <br><br>
+            <label for="totalMarks">Total Marks:</label>
+            <input type="number" id="totalMarks" required>
+            <br><br>
+            <button type="button" onclick="calculatePercentage()">Calculate Percentage</button>
+        </form>
+        <div id="result">
+            <p id="percentage"></p>
+        </div>
+    </div>
+    <footer>
+        <p>congratulations</p>
+    </footer>
+
+
+    <script>
+        function calculatePercentage() {
+    var obtainedMarks = document.getElementById('obtainedMarks').value;
+    var totalMarks = document.getElementById('totalMarks').value;
+
+   
+    if (obtainedMarks === "" || totalMarks === "") {
+        alert("Please enter both obtained and total marks.");
+        return;
+    }
+
+    obtainedMarks = parseFloat(obtainedMarks);
+    totalMarks = parseFloat(totalMarks);
+
+    if (totalMarks <= 0) {
+        alert("Total marks should be greater than zero.");
+        return;
+    }
+
+
+    var percentage = (obtainedMarks / totalMarks) * 100;
+
+
+    var resultText = "";
+
+    switch (true) {
+        case (percentage >= 90):
+            resultText = "Outstanding! You scored " + percentage.toFixed(2) + "%";
+            break;
+        case (percentage >= 75 && percentage < 90):
+            resultText = "Excellent! You scored " + percentage.toFixed(2) + "%";
+            break;
+        case (percentage >= 60 && percentage < 75):
+            resultText = "Good job! You scored " + percentage.toFixed(2) + "%";
+            break;
+        case (percentage >= 50 && percentage < 60):
+            resultText = "Satisfactory. You scored " + percentage.toFixed(2) + "%";
+            break;
+        case (percentage >= 40 && percentage < 50):
+            resultText = "Needs Improvement. You scored " + percentage.toFixed(2) + "%";
+            break;
+        default:
+            resultText = "You failed. You scored " + percentage.toFixed(2) + "%";
+            break;
+    }
+
+    // Display result
+    document.getElementById('percentage').textContent = resultText;
+}
+
+    </script>
+
+
+    </script>
+</body>
+</html>
